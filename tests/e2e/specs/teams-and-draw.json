@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "teams-and-draw",
+    "kind": "interactive",
+    "goal": "El administrador crea dos equipos, arma un partido entre ellos y lo ve en el calendario",
+    "requirementIndexes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "acceptanceCriteriaIndexes": [
+      0,
+      2,
+      7
+    ],
+    "steps": [
+      "Sign in",
+      "Open the Equipos tab",
+      "Create a team named Leones Rojos and press Guardar",
+      "Create a team named Tigres Azules and press Guardar",
+      "Open the Sorteo tab",
+      "Create a round named Jornada 1 and press Crear jornada",
+      "Add a match with Leones Rojos as home team and Tigres Azules as away team and press Añadir partido"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Sorteo"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Equipos"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Leones Rojos"
+      },
+      {
+        "afterStep": 3,
+        "expectText": "Tigres Azules"
+      },
+      {
+        "afterStep": 4,
+        "expectText": "Sorteo"
+      },
+      {
+        "afterStep": 5,
+        "expectText": "Jornada 1"
+      },
+      {
+        "afterStep": 6,
+        "expectText": "Leones Rojos"
+      },
+      {
+        "afterStep": 6,
+        "expectText": "Tigres Azules"
+      }
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Bricolage Grotesque", sans-serif;
+    --font-body: "Figtree", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.75rem;
+
+    /* Bone-white pitch paper */
+    --background: 0.965 0.012 95;
+    --foreground: 0.215 0.035 155;
+    --card: 0.995 0.006 95;
+    --card-foreground: 0.215 0.035 155;
+    --popover: 0.995 0.006 95;
+    --popover-foreground: 0.215 0.035 155;
+
+    /* Forest ink — header, nav, primary buttons */
+    --primary: 0.315 0.062 158;
+    --primary-foreground: 0.97 0.012 95;
+
+    --secondary: 0.925 0.018 95;
+    --secondary-foreground: 0.27 0.035 155;
+    --muted: 0.925 0.018 95;
+    --muted-foreground: 0.475 0.022 155;
+
+    /* Lime chartreuse — active states, highlights */
+    --accent: 0.875 0.185 118;
+    --accent-foreground: 0.22 0.05 155;
+
+    --destructive: 0.545 0.195 27;
+    --destructive-foreground: 0.97 0.012 27;
+
+    --success: 0.52 0.14 152;
+    --success-foreground: 0.97 0.012 152;
+    --warning: 0.79 0.135 62;
+    --warning-foreground: 0.23 0.05 62;
+
+    --border: 0.885 0.016 95;
+    --input: 0.885 0.016 95;
+    --ring: 0.315 0.062 158;
+
+    --chart-1: 0.315 0.062 158;
+    --chart-2: 0.875 0.185 118;
+    --chart-3: 0.79 0.135 62;
+    --chart-4: 0.545 0.195 27;
+    --chart-5: 0.55 0.09 235;
+
+    --sidebar: 0.995 0.006 95;
+    --sidebar-foreground: 0.215 0.035 155;
+    --sidebar-primary: 0.315 0.062 158;
+    --sidebar-primary-foreground: 0.97 0.012 95;
+    --sidebar-accent: 0.925 0.018 95;
+    --sidebar-accent-foreground: 0.27 0.035 155;
+    --sidebar-border: 0.885 0.016 95;
+    --sidebar-ring: 0.315 0.062 158;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.315 0.062 158),
+      oklch(0.265 0.055 165)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.965 0.012 95),
+      oklch(0.94 0.016 95)
+    );
+    --shadow-subtle: 0 1px 2px 0 oklch(0.215 0.035 155 / 0.06), 0 1px 3px 0
+      oklch(0.215 0.035 155 / 0.05);
+    --shadow-elevated: 0 4px 10px -2px oklch(0.215 0.035 155 / 0.1), 0 2px 5px
+      -2px oklch(0.215 0.035 155 / 0.07);
+    --shadow-pitch: 0 8px 22px -8px oklch(0.315 0.062 158 / 0.35);
+  }
+
+  .dark {
+    --background: 0.175 0.028 158;
+    --foreground: 0.945 0.012 95;
+    --card: 0.225 0.032 158;
+    --card-foreground: 0.945 0.012 95;
+    --popover: 0.245 0.032 158;
+    --popover-foreground: 0.945 0.012 95;
+
+    --primary: 0.875 0.185 118;
+    --primary-foreground: 0.19 0.045 155;
+
+    --secondary: 0.265 0.03 158;
+    --secondary-foreground: 0.9 0.012 95;
+    --muted: 0.265 0.03 158;
+    --muted-foreground: 0.665 0.018 95;
+
+    --accent: 0.875 0.185 118;
+    --accent-foreground: 0.19 0.045 155;
+
+    --destructive: 0.62 0.185 27;
+    --destructive-foreground: 0.175 0.028 27;
+
+    --success: 0.72 0.155 152;
+    --success-foreground: 0.175 0.028 152;
+    --warning: 0.81 0.14 62;
+    --warning-foreground: 0.175 0.028 62;
+
+    --border: 0.315 0.03 158;
+    --input: 0.315 0.03 158;
+    --ring: 0.875 0.185 118;
+
+    --chart-1: 0.875 0.185 118;
+    --chart-2: 0.72 0.14 152;
+    --chart-3: 0.81 0.14 62;
+    --chart-4: 0.62 0.185 27;
+    --chart-5: 0.68 0.11 235;
+
+    --sidebar: 0.225 0.032 158;
+    --sidebar-foreground: 0.945 0.012 95;
+    --sidebar-primary: 0.875 0.185 118;
+    --sidebar-primary-foreground: 0.19 0.045 155;
+    --sidebar-accent: 0.265 0.03 158;
+    --sidebar-accent-foreground: 0.9 0.012 95;
+    --sidebar-border: 0.315 0.03 158;
+    --sidebar-ring: 0.875 0.185 118;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.875 0.185 118),
+      oklch(0.8 0.17 125)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.175 0.028 158),
+      oklch(0.2 0.03 158)
+    );
+    --shadow-subtle: 0 1px 2px 0 oklch(0.1 0.02 158 / 0.4), 0 1px 3px 0
+      oklch(0.1 0.02 158 / 0.3);
+    --shadow-elevated: 0 4px 12px -2px oklch(0.08 0.02 158 / 0.55), 0 2px 6px
+      -2px oklch(0.08 0.02 158 / 0.4);
+    --shadow-pitch: 0 8px 24px -8px oklch(0.875 0.185 118 / 0.28);
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, outline-color, opacity, box-shadow,
+      transform, filter, backdrop-filter;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-subtle {
+    background-image: var(--gradient-subtle);
+  }
+
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-pitch {
+    box-shadow: var(--shadow-pitch);
+  }
+
+  /* Matchday programme label: tiny tracked uppercase mono */
+  .label-programme {
+    @apply font-mono text-[0.6875rem] font-medium uppercase tracking-[0.18em];
+  }
+
+  /* Pitch-line texture for hero surfaces: faint horizontal stripes */
+  .pitch-lines {
+    background-image: repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 22px,
+      oklch(var(--primary-foreground) / 0.06) 22px,
+      oklch(var(--primary-foreground) / 0.06) 23px
+    );
+  }
+}

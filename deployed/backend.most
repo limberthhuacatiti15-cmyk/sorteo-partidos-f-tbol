@@ -1,0 +1,97 @@
+// Version: 4.0.0
+type AccessControlState__204832294 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__175655829<Principal, UserRole__256279894>
+  };
+type ApprovalStatus__982498703 = {#approved; #pending; #rejected};
+type Data__1061330525<K, V> =
+  {var count : Nat__565224867; kvs : [var ?(K, V)]};
+type Internal__1060388275<K, V> =
+  {children : [var ?Node__1010487028<K, V>]; data : Data__1061330525<K, V>};
+type Leaf__8515789<K, V> = {data : Data__1061330525<K, V>};
+type Map__175655829<K, V> = Map__975833162<K, V>;
+type Map__925935234<K, V> =
+  {var root : Node__1010487028<K, V>; var size : Nat__565224867};
+type Map__975833162<K, V> = Map__925935234<K, V>;
+type MatchId__543136929 = Nat;
+type MatchStatus__288828669 = {#played; #scheduled};
+type MatchStatus__830332956 = {#played; #scheduled};
+type Match__259227705 =
+  {
+    awayScore : ?Nat;
+    awayTeamId : TeamId__900592005;
+    homeScore : ?Nat;
+    homeTeamId : TeamId__900592005;
+    id : MatchId__543136929;
+    matchdayId : MatchdayId__851881145;
+    status : MatchStatus__830332956
+  };
+type Match__84033613 =
+  {
+    awayScore : ?Nat;
+    awayTeamId : Nat;
+    homeScore : ?Nat;
+    homeTeamId : Nat;
+    id : Nat;
+    matchdayId : Nat;
+    status : MatchStatus__288828669
+  };
+type MatchdayId__851881145 = Nat;
+type Matchday__15753431 =
+  {createdAt : Timestamp__301639476; id : MatchdayId__851881145; name : Text};
+type Matchday__618030595 = {createdAt : Int; id : Nat; name : Text};
+type Nat__565224867 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__769816496 =
+  {
+    accessControlState : AccessControlState__204832294;
+    approvalState : UserApprovalState__266451338;
+    matchdays : Map__175655829<Nat, Matchday__618030595>;
+    matches : Map__175655829<Nat, Match__84033613>;
+    state :
+      {var nextMatchId : Nat; var nextMatchdayId : Nat; var nextTeamId : Nat};
+    teams : Map__175655829<Nat, Team__921126796>
+  };
+type Node__1010487028<K, V> =
+  {#internal : Internal__1060388275<K, V>; #leaf : Leaf__8515789<K, V>};
+type OldActor__512397517 = {};
+type TeamId__900592005 = Nat;
+type Team__921126796 = {color : Text; id : Nat; name : Text};
+type Team__944861453 = {color : Text; id : TeamId__900592005; name : Text};
+type Timestamp__301639476 = Int;
+type UserApprovalState__266451338 =
+  {var approvalStatus : Map__175655829<Principal, ApprovalStatus__982498703>};
+type UserRole__256279894 = {#admin; #guest; #user};
+{
+  "00000000_000000" : OldActor__512397517 -> NewActor__769816496
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__175655829<Principal, UserRole__256279894>
+    };
+  stable approvalState :
+    {
+      var approvalStatus :
+        Map__175655829<Principal, ApprovalStatus__982498703>
+    };
+  stable matchdays :
+    {
+      var root : Node__1010487028<MatchdayId__851881145, Matchday__15753431>;
+      var size : Nat__565224867
+    };
+  stable matches :
+    {
+      var root : Node__1010487028<MatchId__543136929, Match__259227705>;
+      var size : Nat__565224867
+    };
+  stable state :
+    {var nextMatchId : Nat; var nextMatchdayId : Nat; var nextTeamId : Nat};
+  stable teams :
+    {
+      var root : Node__1010487028<TeamId__900592005, Team__944861453>;
+      var size : Nat__565224867
+    }
+};

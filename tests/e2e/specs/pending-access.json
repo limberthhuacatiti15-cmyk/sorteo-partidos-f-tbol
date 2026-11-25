@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "pending-access",
+    "kind": "interactive",
+    "goal": "Un usuario no aprobado ve un mensaje de acceso pendiente y no ve el sorteo",
+    "requirementIndexes": [
+      1
+    ],
+    "acceptanceCriteriaIndexes": [
+      1,
+      5,
+      6
+    ],
+    "persona": "invitado",
+    "steps": [
+      "Sign in"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "pendiente"
+      },
+      {
+        "afterStep": 0,
+        "expectNoText": "Jornada 1"
+      }
+    ]
+  }
+}

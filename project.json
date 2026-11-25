@@ -1,0 +1,20 @@
+{
+  "overview": "A mobile-friendly football match draw app where an administrator registers teams and decides by hand which team plays which in each round.",
+  "features": [
+    "Sign in with Internet Identity and administrator approval of who can join",
+    "Create, edit and delete teams with a name and a distinctive color",
+    "Create rounds and pick the home and away team of every match by hand",
+    "Warning when a team is picked twice in the same round",
+    "Mark a match as played and enter the final score",
+    "Match calendar grouped by round, readable on a phone"
+  ],
+  "category": "sports",
+  "tags": [
+    "football",
+    "sports",
+    "scheduling",
+    "mobile",
+    "admin"
+  ],
+  "last_updated": "2026-11-24T02:45:50.587Z"
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-24T02:51:00.742Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Añadir\"",
+        "target": {
+          "role": "button",
+          "name": "Añadir"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"Leones Rojos\" into textbox \"Nombre del equipo\" in \"Nuevo equipo\"",
+        "target": {
+          "role": "textbox",
+          "name": "Nombre del equipo",
+          "placeholder": "Ej. Atlético Norte",
+          "within": "Nuevo equipo"
+        },
+        "value": "Leones Rojos"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Crear equipo\" in \"Nuevo equipo\"",
+        "target": {
+          "role": "button",
+          "name": "Crear equipo",
+          "within": "Nuevo equipo"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "teams-and-draw.e2e.ts::teams-and-draw",
+      "targetId": "web",
+      "instructionDigest": "9db608506f9269688ef3b4ae1722e644bb3497835fbca9f748b0b159d9ea5423",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Opened the Añadir equipo dialog, typed \"Leones Rojos\" and pressed Crear equipo (Guardar). The dialog closed and the Equipos list now shows \"Leones Rojos #31543f\" with \"1 equipo en la liga\".",
+    "startPath": "/equipos",
+    "endPath": "/equipos",
+    "endAnchors": [
+      {
+        "text": "1 equipo en la liga"
+      },
+      {
+        "text": "Leones Rojos"
+      },
+      {
+        "text": "#31543f"
+      },
+      {
+        "role": "button",
+        "name": "Editar Leones Rojos"
+      },
+      {
+        "role": "button",
+        "name": "Eliminar Leones Rojos"
+      },
+      {
+        "role": "listitem",
+        "name": "Leones Rojos #31543f Editar Leones Rojos Eliminar Leones Rojos"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Los equipos de la liga aparecerán aquí."
+      },
+      {
+        "role": "heading",
+        "name": "Aún no hay equipos"
+      },
+      {
+        "text": "Crea el primer equipo para empezar a armar las jornadas."
+      },
+      {
+        "role": "button",
+        "name": "Crear primer equipo"
+      }
+    ],
+    "endWaitMs": 11247,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

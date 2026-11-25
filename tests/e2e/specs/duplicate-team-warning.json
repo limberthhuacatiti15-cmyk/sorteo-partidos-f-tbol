@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "duplicate-team-warning",
+    "kind": "interactive",
+    "goal": "Al intentar poner un equipo repetido en la misma jornada la app avisa y no guarda el partido",
+    "requirementIndexes": [
+      6
+    ],
+    "acceptanceCriteriaIndexes": [
+      3
+    ],
+    "steps": [
+      "Sign in",
+      "Open the Sorteo tab",
+      "Add a match with Leones Rojos as home team and Leones Rojos as away team and press Añadir partido"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Sorteo"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Jornada 1"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Un equipo no puede jugar contra sí mismo"
+      }
+    ]
+  }
+}

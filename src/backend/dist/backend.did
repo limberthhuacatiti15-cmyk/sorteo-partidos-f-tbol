@@ -1,0 +1,155 @@
+type Value = 
+ variant {
+   "bool": bool;
+   float: float64;
+   "int": int;
+   "nat": nat;
+   "null";
+   "text": text;
+ };
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type UserApprovalInfo = 
+ record {
+   "principal": principal;
+   status: ApprovalStatus;
+ };
+type Timestamp = int;
+type TeamInput = 
+ record {
+   color: text;
+   name: text;
+ };
+type TeamId = nat;
+type Team = 
+ record {
+   color: text;
+   id: TeamId;
+   name: text;
+ };
+type Result__1 = 
+ variant {
+   err: Error;
+   ok;
+ };
+type Result = 
+ record {
+   hasMore: bool;
+   rows: vec vec Cell;
+ };
+type MatchdayView = 
+ record {
+   createdAt: Timestamp;
+   id: MatchdayId;
+   matches: vec Match;
+   name: text;
+ };
+type MatchdayId = nat;
+type Matchday = 
+ record {
+   createdAt: Timestamp;
+   id: MatchdayId;
+   name: text;
+ };
+type MatchStatus = 
+ variant {
+   played;
+   scheduled;
+ };
+type MatchInput = 
+ record {
+   awayTeamId: TeamId;
+   homeTeamId: TeamId;
+ };
+type MatchId = nat;
+type Match = 
+ record {
+   awayScore: opt nat;
+   awayTeamId: TeamId;
+   homeScore: opt nat;
+   homeTeamId: TeamId;
+   id: MatchId;
+   matchdayId: MatchdayId;
+   status: MatchStatus;
+ };
+type FixtureError = 
+ variant {
+   invalidScore;
+   notFound;
+   sameTeam;
+   teamAlreadyInMatchday: record {teamId: TeamId;};
+   unknownTeam: record {teamId: TeamId;};
+ };
+type Error = 
+ variant {
+   AmbiguousAttribute: record {
+                         field: text;
+                         sources: vec text;
+                       };
+   FrontendOriginMismatch: record {
+                             expected: vec text;
+                             got: text;
+                           };
+   FrontendOriginsNotConfigured;
+   MalformedCandid;
+   MissingField: text;
+   MixedSsoSources: record {
+                      otherKeys: vec text;
+                      ssoKeys: vec text;
+                    };
+   NoAttributes;
+   Stale: record {ageNs: nat;};
+   UnknownNonce;
+   UntrustedSsoSource: record {domain: text;};
+ };
+type Cell = 
+ record {
+   name: text;
+   value: Value;
+ };
+type ApprovalStatus = 
+ variant {
+   approved;
+   pending;
+   rejected;
+ };
+service : {
+  _initialize_access_control: () -> ();
+  _internet_identity_sign_in_finish: () -> (Result__1);
+  _internet_identity_sign_in_start: () -> (blob);
+  addMatch: (matchdayId: MatchdayId, input: MatchInput) ->
+   (variant {
+      err: FixtureError;
+      ok: Match;
+    });
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  createMatchday: (name: text) -> (Matchday);
+  createTeam: (input: TeamInput) -> (Team);
+  deleteMatch: (matchId: MatchId) -> (bool);
+  deleteMatchday: (id: MatchdayId) -> (bool);
+  deleteTeam: (id: TeamId) -> (bool);
+  execute: (qJson: text) -> (Result) query;
+  getApiDoc: () -> (text) query;
+  getCallerUserRole: () -> (UserRole) query;
+  isCallerAdmin: () -> (bool) query;
+  isCallerApproved: () -> (bool) query;
+  listApprovals: () -> (vec UserApprovalInfo) query;
+  listMatchdays: () -> (vec MatchdayView) query;
+  listTeams: () -> (vec Team) query;
+  removeApproval: (user: principal) -> ();
+  requestApproval: () -> ();
+  schema: () -> (text) query;
+  setApproval: (user: principal, status: ApprovalStatus) -> ();
+  setMatchResult: (matchId: MatchId, homeScore: nat, awayScore: nat) ->
+   (opt Match);
+  updateMatch: (matchId: MatchId, input: MatchInput) ->
+   (variant {
+      err: FixtureError;
+      ok: Match;
+    });
+  updateTeam: (id: TeamId, input: TeamInput) -> (opt Team);
+}

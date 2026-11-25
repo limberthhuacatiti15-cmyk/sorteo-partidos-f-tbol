@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "flows": {
+    "duplicate-team-warning": {
+      "flowId": "duplicate-team-warning",
+      "specDigest": "6e6d5d22cb98b4f651a4bb7cccd8f9ea1222ab4e8c1c8e442afed00bc39ca277",
+      "status": "record-failed",
+      "recordedAt": "2026-11-24T03:04:56.912Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "46d15b9e91cc46cfbf8cbc3307c47ba7bdac61a37f38afb705874a034fc1ecce.json"
+      ],
+      "quarantined": true,
+      "quarantineFailure": "at steps[1] (\"Open the Sorteo tab\"): expect ASSERTION_FAILED: expect.toBeVisible failed locator: getByText(/Jornada\\s*1/i, visible: true).first() expected: visible observed: no node (match count 0)"
+    },
+    "pending-access": {
+      "flowId": "pending-access",
+      "specDigest": "cefc27194cdc06a15f3b64119b1fe9f2a5ea24e2362c1874848bc0121843023a",
+      "status": "recorded",
+      "recordedAt": "2026-11-24T02:52:30.143Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "374f5e335dd88b7874d510483c3cdf285891b156c28e6b8271b5903a9de766ca.json"
+      ],
+      "ranAfter": [
+        "teams-and-draw"
+      ],
+      "ranWith": [
+        "duplicate-team-warning",
+        "score-and-reload",
+        "teams-and-draw"
+      ],
+      "passedTree": "867eaeaae68e8aebcb7bcbd0436b85ba264ba570",
+      "visitedPaths": [
+        "/"
+      ]
+    },
+    "score-and-reload": {
+      "flowId": "score-and-reload",
+      "specDigest": "58678591a62c71f93814f0137935a2778e896314083226c0ca3ebc3ca54357a0",
+      "status": "record-failed",
+      "recordedAt": "2026-11-24T03:04:56.912Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "313ff29de034cbcd0465c247c294d10941d4643879ab87378cac88be7c694647.json"
+      ],
+      "quarantined": true,
+      "quarantineFailure": "at steps[1] (\"Open the Sorteo tab\"): expect ASSERTION_FAILED: expect.toBeVisible failed locator: getByText(/Jornada\\s*1/i, visible: true).first() expected: visible observed: no node (match count 0)"
+    },
+    "teams-and-draw": {
+      "flowId": "teams-and-draw",
+      "specDigest": "c7cc97a7219499a179310baf4821e85a29f1d4feabd440cb958484d21fc56c80",
+      "status": "recorded",
+      "recordedAt": "2026-11-24T03:04:56.911Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "cb4da2540b83f33752bd5064621740b256e02f5c69fcd849b61e776892bd84f6.json",
+        "0330fc8aaceecddca3a701a10b745fdf4e00831f2661e3703b40ce28d6fa6547.json",
+        "e22c999ade09ba2c7f6437ff9c6fffbc5894e2f961b7b5628ff80c78543cc3ff.json",
+        "6cdf5bdc0788edf21fc6f63f109ff327c7e9c11877487dc0600b097dc61501e9.json",
+        "81fc65697ad507bc19bf229796052d27cc155d33915eaf904e8932ed7e657837.json",
+        "07bb5216769957670da50dd53a2a3c7f518863933dac81e687a766c638a3b7d1.json",
+        "ac088f07a866ec249cd2cfb253cf721328f25ec54aaefef2b7aa138775bb58dd.json"
+      ],
+      "ranAfter": [],
+      "ranWith": []
+    }
+  }
+}

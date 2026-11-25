@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-24T02:51:00.743Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Añadir\"",
+        "target": {
+          "role": "button",
+          "name": "Añadir"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"Tigres Azules\" into textbox \"Nombre del equipo\" in \"Nuevo equipo\"",
+        "target": {
+          "role": "textbox",
+          "name": "Nombre del equipo",
+          "placeholder": "Ej. Atlético Norte",
+          "within": "Nuevo equipo"
+        },
+        "value": "Tigres Azules"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Crear equipo\" in \"Nuevo equipo\"",
+        "target": {
+          "role": "button",
+          "name": "Crear equipo",
+          "within": "Nuevo equipo"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "teams-and-draw.e2e.ts::teams-and-draw",
+      "targetId": "web",
+      "instructionDigest": "0196ebc3352d6bec2747286ff821f6bcf995755e9a9ef7f23f382959095b3024",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Opened the Añadir equipo dialog, typed \"Tigres Azules\" and pressed Crear equipo (Guardar). The dialog closed and the Equipos list now shows \"Tigres Azules #31543f\" with \"2 equipos en la liga\".",
+    "startPath": "/equipos",
+    "endPath": "/equipos",
+    "endAnchors": [
+      {
+        "text": "2 equipos en la liga"
+      },
+      {
+        "text": "Tigres Azules"
+      },
+      {
+        "role": "button",
+        "name": "Editar Tigres Azules"
+      },
+      {
+        "role": "button",
+        "name": "Eliminar Tigres Azules"
+      },
+      {
+        "role": "listitem",
+        "name": "Tigres Azules #31543f Editar Tigres Azules Eliminar Tigres Azules"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "1 equipo en la liga"
+      }
+    ],
+    "endWaitMs": 11164,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-24T02:52:30.077Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Entrar con Internet Identity\"",
+        "target": {
+          "role": "button",
+          "name": "Entrar con Internet Identity"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "pending-access.e2e.ts::pending-access",
+      "targetId": "web",
+      "instructionDigest": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Signed in via \"Entrar con Internet Identity\"; the app now shows a signed-in pending-access screen: \"Acceso pendiente / Tu cuenta espera aprobación\" with \"Solicitar acceso\" and \"Cerrar sesión\" buttons.",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "text": "Acceso pendiente"
+      },
+      {
+        "role": "heading",
+        "name": "Tu cuenta espera aprobación"
+      },
+      {
+        "text": "El administrador debe aprobar tu acceso antes de que puedas ver el sorteo y los equipos."
+      },
+      {
+        "role": "button",
+        "name": "Solicitar acceso"
+      },
+      {
+        "role": "button",
+        "name": "Cerrar sesión"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Sorteo de partidos"
+      },
+      {
+        "role": "heading",
+        "name": "Jornada"
+      },
+      {
+        "text": "Organiza tus equipos y decide a mano qué juega cada jornada. Entra con tu Internet Identity para ver el sorteo."
+      },
+      {
+        "role": "button",
+        "name": "Entrar con Internet Identity"
+      },
+      {
+        "role": "link",
+        "name": "© 2026. Built with love using caffeine.ai"
+      }
+    ],
+    "endWaitMs": 18978,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

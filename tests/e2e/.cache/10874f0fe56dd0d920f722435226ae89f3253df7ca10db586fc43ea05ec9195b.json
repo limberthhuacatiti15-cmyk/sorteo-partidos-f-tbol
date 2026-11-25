@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-24T02:55:35.224Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Jornada\"",
+        "target": {
+          "role": "button",
+          "name": "Jornada"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"Jornada 1\" into textbox \"Nombre de la jornada\" in \"Nueva jornada\"",
+        "target": {
+          "role": "textbox",
+          "name": "Nombre de la jornada",
+          "placeholder": "Jornada 1",
+          "within": "Nueva jornada"
+        },
+        "value": "Jornada 1"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Crear jornada\" in \"Nueva jornada\"",
+        "target": {
+          "role": "button",
+          "name": "Crear jornada",
+          "within": "Nueva jornada"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "teams-and-draw.e2e.ts::teams-and-draw",
+      "targetId": "web",
+      "instructionDigest": "22423b3b7373eb3c64165ab7c954ac3883d4556649d5c0638d61b9db9d7073a5",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Opened the Jornada dialog, typed \"Jornada 1\" and pressed Crear jornada. The dialog closed and the Sorteo page now shows a \"Jornada 1\" round (24 NOV) with \"Sin partidos todavía.\" and an Añadir partido button.",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Jornada 1"
+      },
+      {
+        "role": "button",
+        "name": "Eliminar jornada Jornada 1"
+      },
+      {
+        "text": "Sin partidos todavía."
+      },
+      {
+        "role": "button",
+        "name": "Añadir partido"
+      }
+    ],
+    "endWaitMs": 11121,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "score-and-reload",
+    "kind": "interactive",
+    "goal": "El administrador marca el partido como jugado con marcador y el resultado sigue visible tras recargar",
+    "requirementIndexes": [
+      7,
+      10
+    ],
+    "acceptanceCriteriaIndexes": [
+      4
+    ],
+    "steps": [
+      "Sign in",
+      "Open the Sorteo tab",
+      "Mark the match between Leones Rojos and Tigres Azules as played with a score of 2 to 1 and press Guardar",
+      "Reload the page",
+      "Open the Sorteo tab"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Sorteo"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Jornada 1"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "2"
+      },
+      {
+        "afterStep": 3,
+        "expectText": "Sorteo"
+      },
+      {
+        "afterStep": 4,
+        "expectText": "Leones Rojos"
+      },
+      {
+        "afterStep": 4,
+        "expectText": "2"
+      }
+    ]
+  }
+}

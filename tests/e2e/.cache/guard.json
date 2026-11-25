@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "flows": {
+    "duplicate-team-warning": {
+      "plan": [
+        "8cb0680036258007",
+        "d861073cb8f71d9f"
+      ],
+      "last": "failed"
+    },
+    "pending-access": {
+      "plan": [
+        "01e216190d858cb8",
+        "55a0589424b37773",
+        "a8b02550556f789b",
+        "ec48b05767691b6e"
+      ],
+      "last": "passed"
+    },
+    "score-and-reload": {
+      "plan": [
+        "8e018c2fe4101061",
+        "8f5b394c565354bd",
+        "ea5515605189308c"
+      ],
+      "last": "failed"
+    },
+    "teams-and-draw": {
+      "plan": [
+        "0bce54ea044d6f53",
+        "3f1900832130cd2d",
+        "454eaa60231ae6f6",
+        "4c7970b57844bef4",
+        "55a0589424b37773",
+        "55ca9feea4e95ea5",
+        "8e018c2fe4101061",
+        "8f5b394c565354bd",
+        "ae347b4ce9a17d9a",
+        "b80f28eb57cbbd51",
+        "bba6f8bdf6a5ceee",
+        "c469434cc7f98345",
+        "d861073cb8f71d9f",
+        "e057f0bcbc363a02",
+        "e76614b99b0db6bc",
+        "e9eec7091aa9e9c6",
+        "f3542a293eeee2a5"
+      ],
+      "last": "passed"
+    }
+  },
+  "order": [
+    "teams-and-draw",
+    "duplicate-team-warning",
+    "score-and-reload",
+    "pending-access"
+  ]
+}
